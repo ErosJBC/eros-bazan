@@ -1,15 +1,10 @@
-<nav>
-    <div>
-        <img src="" alt="">
+<nav class="fixed w-full bg-slate-800 z-50 p-3 flex items-center justify-between">
+    <div class="w-20 rounded overflow-auto">
+        <img class="w-full h-auto" src="../../../../assets/img/movie_logo.jpg" alt="movie_logo">
     </div>
-    <div>
-        <ul>
-            <li>
-                <a routerLink="/" routerLinkActive="active">Home</a>
-            </li>
-            <li>
-                <a routerLink="/movies" routerLinkActive="active">About</a>
-            </li>
-        </ul>
-    </div>
+    <ul class="flex items-center justify-center gap-x-0.5">
+        <li *ngFor="let item of navBarItems" class="cursor-pointer text-white font-medium py-2 px-4 hover:bg-white hover:text-slate-800 rounded transition duration-300 ease-in-out">
+            <a [routerLink]="item.path">{{ item.title }}</a>
+        </li>
+    </ul>
 </nav>

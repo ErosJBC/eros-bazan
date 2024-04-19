@@ -3,17 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MovieCardComponent, ToolbarComponent } from './shared';
-import { HomeComponent } from './views/home/home.component';
-import { MoviesComponent } from './views/movies/movies.component';
+import { ToolbarComponent } from './shared';
+import { HomeComponent, MovieItemComponent, MovieListComponent, MoviesComponent } from './views';
 
 @NgModule({
     declarations: [
         AppComponent,
-        MovieCardComponent,
         ToolbarComponent,
         HomeComponent,
-        MoviesComponent
+        MoviesComponent,
+        MovieListComponent,
+        MovieItemComponent
     ],
     imports: [
         BrowserModule,
