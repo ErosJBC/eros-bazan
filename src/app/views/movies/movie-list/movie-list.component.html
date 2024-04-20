@@ -3,4 +3,7 @@
         <app-movie-item [movie]="movie"></app-movie-item>
     </ng-container>
 </div>
+<ng-container *ngIf="movies.length === 0">
+    <p class="mt-4 text-center font-medium text-slate-800">No results</p>
+</ng-container>
 

@@ -12,6 +12,7 @@ export class MoviesComponent implements OnInit {
     moviesList: Array<Movie> = [];
     genresList: Array<string> = [];
     filteredMovies: Array<Movie> = [];
+    selectedGenres: Array<string> = [];
 
     constructor(private dataService: DataService) { }
 
@@ -28,7 +29,7 @@ export class MoviesComponent implements OnInit {
     }
 
     getGenres = (data: any) => {
-        this.genresList = data.genres.concat(['All movies']);
+        this.genresList = data.genres;
     }
 
     getMovies = (data: any) => {
@@ -44,8 +45,15 @@ export class MoviesComponent implements OnInit {
         );
     }
 
-    filterByGenre = (genre: string) => {
-        if (genre === 'All movies') this.filteredMovies = this.moviesList;
-        else this.filteredMovies = this.moviesList.filter((movie) => movie.genre === genre);
+    filterByGenres = (event: Event) => {
+        event.preventDefault();
+        const genreName = (event.target as HTMLInputElement).name;
+        const genreSelected = (event.target as HTMLInputElement).checked;
+
+        if (genreSelected) this.selectedGenres.push(genreName);
+        else this.selectedGenres = this.selectedGenres.filter((genre) => genre !== genreName);
+
+        if (this.selectedGenres.length === 0) this.filteredMovies = this.moviesList;
+        else this.filteredMovies = this.moviesList.filter((movie) => this.selectedGenres.includes(movie.genre));
     }
 }
