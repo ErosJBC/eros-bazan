@@ -1,27 +1,17 @@
 # Movies App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+Este proyecto fue realizado con Angular 16.2.14. Para el estilado, se usó Tailwind CSS y para el consumo de datos, Axios.
 
-## Development server
+## Ejecución del proyecto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Ejecutar `npm start` para levantar el proyecto en local (`http://localhost:4200/`). Ejecutar `npm run build` para generar el compilado.
 
-## Code scaffolding
+## Funciones desarrolladas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Se desarrolló dos vistas: `home` y `movies`. En `home` tiene una link para redirigir a la vista de películas. También se puede hacer desde el navbar desarollado.
 
-## Build
+En `movies` se desarrolló los requerimientos técnivos. Se implementó filtros de búsqueda mediante un input nativo. Este input realiza el filtro tanto por películas como por descripción de la misma.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+También se implementó un menú de opciones para el filtrado de las películas por el género. Este menu de opciones fue realizado con checkboxes nativos.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Se agrega un archivo JSON en una carpeta `data`, dentro de la carpeta `assets`. Ese archivo se construye manualmente para su posterior consumo mediante Axios. Se configura una instancia y luego se realiza el llamado del JSON mediante una petición GET.
